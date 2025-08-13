@@ -3,10 +3,15 @@ import { OnchainInteractions } from "../../common/utils/onchain/onchainInteracti
 import { ethers } from "ethers";
 
 export class WalletService {
-  //   static async getWallet(userId: string) {
-  //     const wallet = await Wallet.findOne({ user: userId }, { hashedPrivateKey: 0, iv: 0 });
-  //     return wallet;
-  //   }
+  static async getWallet(userId: string) {
+    const wallet = await Wallet.findOne({ user: userId }, { hashedPrivateKey: 0, iv: 0 });
+    return wallet;
+  }
+
+  static async getWalletByAddress(address: string) {
+    const wallet = await Wallet.findOne({ address }, { hashedPrivateKey: 0, iv: 0 });
+    return wallet;
+  }
 
   static async getWalletByCardSerialNumber(cardSerialNumber: string) {
     const wallet = await Wallet.findOne(
@@ -21,8 +26,6 @@ export class WalletService {
    * @param userId - User ID initiating the transfer
    * @param to - Recipient address
    * @param amount - Amount to transfer (in wei)
-   * @param iv - Initialization vector for encrypted private key
-   * @param encryptedData - Encrypted private key data
    * @returns Transfer result with transaction hashes
    */
   static async executeGaslessTransfer(
@@ -53,7 +56,7 @@ export class WalletService {
         throw new Error("Insufficient balance");
       }
 
-      // Execute gasless transfer
+      // Execute gasless transfer using wallet's iv and hashedPrivateKey
       const result = await OnchainInteractions.executeGaslessTransfer(
         wallet.address,
         to,
@@ -81,6 +84,63 @@ export class WalletService {
     } catch (error) {
       throw new Error(`Gasless transfer failed: ${error}`);
     }
+  }
+
+  /**
+   * Get current token balance for a wallet
+   * @param userId - User ID
+   * @returns Current token balance
+   */
+  static async getTokenBalance(userId: string) {
+    try {
+      const wallet = await Wallet.findOne({ user: userId });
+      if (!wallet) {
+        throw new Error("Wallet not found");
+      }
+
+      const balance = await OnchainInteractions.getTokenBalance(wallet.address);
+      return {
+        address: wallet.address,
+        balance: balance.toString(),
+        balanceWei: balance
+      };
+    } catch (error) {
+      throw new Error(`Failed to get token balance: ${error}`);
+    }
+  }
+
+  /**
+   * Get permit nonce for a wallet
+   * @param userId - User ID
+   * @returns Current permit nonce
+   */
+  static async getPermitNonce(userId: string) {
+    try {
+      const wallet = await Wallet.findOne({ user: userId });
+      if (!wallet) {
+        throw new Error("Wallet not found");
+      }
+
+      const nonce = await OnchainInteractions.getPermitNonce(wallet.address);
+      return {
+        address: wallet.address,
+        nonce: nonce.toString()
+      };
+    } catch (error) {
+      throw new Error(`Failed to get permit nonce: ${error}`);
+    }
+  }
+
+  /**
+   * Validate wallet address format
+   * @param address - Address to validate
+   * @returns Validation result
+   */
+  static validateAddress(address: string) {
+    return {
+      isValid: ethers.isAddress(address),
+      address: address
+    };
   }
 
   /**

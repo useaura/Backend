@@ -48,6 +48,40 @@ export class WalletController {
   }
 
   /**
+   * Get wallet by address
+   */
+  static async getWalletByAddress(req: Request, res: Response) {
+    try {
+      const { address } = req.params;
+      if (!address) {
+        throw new HttpException(BAD_REQUEST, "Wallet address is required");
+      }
+
+      const wallet = await WalletService.getWalletByAddress(address);
+      if (!wallet) {
+        throw new HttpException(NOT_FOUND, "Wallet not found");
+      }
+
+      res.status(OK).json({
+        success: true,
+        data: wallet,
+      });
+    } catch (error) {
+      if (error instanceof HttpException) {
+        res.status(error.status).json({
+          success: false,
+          message: error.message,
+        });
+      } else {
+        res.status(INTERNAL_SERVER_ERROR).json({
+          success: false,
+          message: "Failed to get wallet by address",
+        });
+      }
+    }
+  }
+
+  /**
    * Get wallet by card serial number
    */
   static async getWalletByCard(req: Request, res: Response) {
@@ -132,6 +166,96 @@ export class WalletController {
         res.status(INTERNAL_SERVER_ERROR).json({
           success: false,
           message: "Failed to execute gasless transfer",
+        });
+      }
+    }
+  }
+
+  /**
+   * Get current token balance
+   */
+  static async getTokenBalance(req: AuthenticatedRequest, res: Response) {
+    try {
+      const userId = req.user?.id;
+      if (!userId) {
+        throw new HttpException(BAD_REQUEST, "User ID is required");
+      }
+
+      const balance = await WalletService.getTokenBalance(userId);
+      res.status(OK).json({
+        success: true,
+        data: balance,
+      });
+    } catch (error) {
+      if (error instanceof HttpException) {
+        res.status(error.status).json({
+          success: false,
+          message: error.message,
+        });
+      } else {
+        res.status(INTERNAL_SERVER_ERROR).json({
+          success: false,
+          message: "Failed to get token balance",
+        });
+      }
+    }
+  }
+
+  /**
+   * Get permit nonce for wallet
+   */
+  static async getPermitNonce(req: AuthenticatedRequest, res: Response) {
+    try {
+      const userId = req.user?.id;
+      if (!userId) {
+        throw new HttpException(BAD_REQUEST, "User ID is required");
+      }
+
+      const nonce = await WalletService.getPermitNonce(userId);
+      res.status(OK).json({
+        success: true,
+        data: nonce,
+      });
+    } catch (error) {
+      if (error instanceof HttpException) {
+        res.status(error.status).json({
+          success: false,
+          message: error.message,
+        });
+      } else {
+        res.status(INTERNAL_SERVER_ERROR).json({
+          success: false,
+          message: "Failed to get permit nonce",
+        });
+      }
+    }
+  }
+
+  /**
+   * Validate wallet address
+   */
+  static async validateAddress(req: Request, res: Response) {
+    try {
+      const { address } = req.params;
+      if (!address) {
+        throw new HttpException(BAD_REQUEST, "Address is required");
+      }
+
+      const validation = WalletService.validateAddress(address);
+      res.status(OK).json({
+        success: true,
+        data: validation,
+      });
+    } catch (error) {
+      if (error instanceof HttpException) {
+        res.status(error.status).json({
+          success: false,
+          message: error.message,
+        });
+      } else {
+        res.status(INTERNAL_SERVER_ERROR).json({
+          success: false,
+          message: "Failed to validate address",
         });
       }
     }

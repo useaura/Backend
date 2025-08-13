@@ -5,7 +5,7 @@
   "main": "dist/server.js",
   "scripts": {
     "start": "node -r tsconfig-paths/register dist/index.js",
-    "dev": "ts-node-dev -r tsconfig-paths/register src/index.ts",
+    "dev": "tsx watch -r tsconfig-paths/register src/index.ts",
     "build": "tsc",
     "clean": "rm -rf dist"
   },
@@ -48,6 +48,7 @@
     "nodemon": "^3.1.10",
     "ts-node": "^10.9.2",
     "ts-node-dev": "^2.0.0",
+    "tsx": "^4.20.4",
     "typescript": "^5.9.2"
   },
   "keywords": [],
@@ -57,5 +58,12 @@
   "bugs": {
     "url": "https://github.com/useaura/Backend/issues"
   },
-  "homepage": "https://github.com/useaura/Backend#readme"
+  "homepage": "https://github.com/useaura/Backend#readme",
+  "ts-node": {
+    "esm": true,
+    "experimentalSpecifierResolution": "node",
+    "moduleTypes": {
+      "**/*": "esm"
+    }
+  }
 }
