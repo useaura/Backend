@@ -16,3 +16,11 @@
 2025-08-13 13:13:36 [INFO]: AuraPay Running on http://localhost:4000 
 2025-08-13 13:13:37 [INFO]: MongoDB Connected: localhost 
 2025-08-13 13:13:37 [INFO]: ✅ Database connected successfully 
+2025-08-13 13:26:00 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 13:26:00 [INFO]: MongoDB Connected: localhost 
+2025-08-13 13:26:00 [INFO]: ✅ Database connected successfully 
+2025-08-13 13:28:59 [INFO]: Google redirect request: 4/0AVMBsJgrpVv-pWsah75gbn9gogd0_RnJH-YP6xWWBduoeSqUvs8_ph2I2T_PXNm8nbd37w 
+2025-08-13 13:28:59 [INFO]: Google login request: 4/0AVMBsJgrpVv-pWsah75gbn9gogd0_RnJH-YP6xWWBduoeSqUvs8_ph2I2T_PXNm8nbd37w 
+2025-08-13 13:29:01 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6Ny7d2ImhgChTEYOl4TjpLbmIN6Rj7cpa7E68186s4cWgSHMBlRRScQ0RP2dXRCZdvq7OAgkNSY0YXs7HZ62rzQJT6RVb4Y43zyAwHakqNE_QuoYmDf7oqLOZ77hm93bX8e366zwl3bLkNxC8lM4DBtLuy1hvquJ-heEaCgYKAVoSARYSFQHGX2MizTb9tHDl-R3uRepkxGCiTw0175","refresh_token":"1//03awZwe4-Ee8aCgYIARAAGAMSNwF-L9Irqm3uifr39KFNSKlshrL_-lzo4Q-13MNcoVBIq3sanrSejU7-t_j_qyO1hD17K85Uj4E","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755091740477} 
+2025-08-13 13:29:03 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 13:29:03 [INFO]: Creating new user with encryption key length: 64 
