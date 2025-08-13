@@ -93,12 +93,12 @@ export class AuthService {
     }
 
     const jwtSecret: Secret = String(ENVIRONMENT.APP.JWT_SECRET);
-    const accessToken = jwt.sign({ sub: user.id }, jwtSecret, {
+    const accessToken = jwt.sign({ userId: user.id }, jwtSecret, {
       expiresIn:
         (process.env.JWT_EXPIRES_IN as jwt.SignOptions["expiresIn"]) || "15m",
     });
     const refreshToken = jwt.sign(
-      { sub: user.id, type: "refresh" },
+      { userId: user.id, type: "refresh" },
       jwtSecret,
       {
         expiresIn:

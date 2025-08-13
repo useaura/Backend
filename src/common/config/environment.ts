@@ -6,7 +6,7 @@ export const ENVIRONMENT = {
     NAME: process.env.APP_NAME,
     PORT: process.env.PORT || 3000,
     ENV: process.env.APP_ENV,
-    JWT_SECRET: process.env.JWT_SECRET,
+    JWT_SECRET: process.env.JWT_SECRET || "",
     RPC_URL: process.env.RPC_URL || "https://rpc.ankr.com/eth",
     TOKEN_ADDRESS: process.env.TOKEN_ADDRESS || "0x0000000000000000000000000000000000000000",
     OPERATOR_KEY: process.env.OPERATOR_KEY || "",
