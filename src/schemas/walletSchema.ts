@@ -5,6 +5,7 @@ export interface IWallet extends Document {
   address: string;
   balance: number;
   hashedPrivateKey: string;
+  iv: string;
   card: {
     dailyLimit: number;
     monthlyLimit: number;
@@ -19,6 +20,7 @@ const walletSchema = new Schema<IWallet>(
     address: { type: String, required: true },
     balance: { type: Number, default: 0 },
     hashedPrivateKey: { type: String, required: true },
+    iv: { type: String, required: true },
     card: {
       dailyLimit: { type: Number, default: 0 },
       monthlyLimit: { type: Number, default: 0 },

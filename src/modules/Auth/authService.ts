@@ -5,12 +5,22 @@ import { ENVIRONMENT } from "../../common/config/environment";
 import { User } from "../../schemas/userSchema";
 import { Wallet } from "../../schemas/walletSchema";
 import { ethers } from "ethers";
+import { Encryption } from "../../common/utils/encryption/encryption";
 
 type GoogleLoginResult = {
   user: {
     id: string;
     name: string;
     email: string;
+    wallet: {
+      address: string;
+      balance: number;
+      card: {
+        dailyLimit: number;
+        monthlyLimit: number;
+        currentLimit: number;
+      };
+    };
   };
   accessToken: string;
   refreshToken: string;
@@ -26,6 +36,7 @@ export class AuthService {
     const profile = await GoogleOAuthService.getUserInfo(tokens.access_token);
 
     let user = await User.findOne({ "auth.googleId": profile.id });
+    let wallet = await Wallet.findOne({ user: user?.id });
     if (!user) {
       user = await User.findOne({ email: profile.email.toLowerCase() });
     }
@@ -39,7 +50,13 @@ export class AuthService {
     if (!user) {
       const saltRounds = Number(process.env.PIN_SALT_ROUNDS || 10);
       const defaultPinHash = await bcrypt.hash("0000", saltRounds);
-      const wallet = ethers
+      const newWallet = ethers.Wallet.createRandom();
+      const encryptionKey = ENVIRONMENT.ENCRYPTION.DEFAULT_ENCRYPTION_KEY;
+
+      const { iv, encryptedData } = Encryption.encrypt(
+        newWallet.privateKey,
+        encryptionKey || ""
+      );
 
       user = await User.create({
         auth: {
@@ -54,10 +71,11 @@ export class AuthService {
         pinHash: defaultPinHash,
       });
 
-      await Wallet.create({
+      wallet = await Wallet.create({
         user: user.id,
-        address: profile.email.toLowerCase(),
-        hashedPrivateKey: "",
+        address: newWallet.address,
+        hashedPrivateKey: encryptedData,
+        iv: iv,
         card: {
           dailyLimit: 0,
           monthlyLimit: 0,
@@ -97,6 +115,15 @@ export class AuthService {
         id: user.id,
         name: user.name,
         email: user.email,
+        wallet: {
+          address: wallet?.address || "",
+          balance: wallet?.balance || 0,
+          card: {
+            dailyLimit: 0,
+            monthlyLimit: 0,
+            currentLimit: 0,
+          },
+        },
       },
       accessToken,
       refreshToken,
