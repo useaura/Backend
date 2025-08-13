@@ -3,18 +3,16 @@ import { OnchainInteractions } from "../../common/utils/onchain/onchainInteracti
 import { ethers } from "ethers";
 
 export class WalletService {
-  static async getWallet(userId: string) {
-    const wallet = await Wallet.findOne({ user: userId }, { hashedPrivateKey: 0, iv: 0 });
-    return wallet;
-  }
-
-  static async getWalletByAddress(address: string) {
-    const wallet = await Wallet.findOne({ address }, { hashedPrivateKey: 0, iv: 0 });
-    return wallet;
-  }
+  //   static async getWallet(userId: string) {
+  //     const wallet = await Wallet.findOne({ user: userId }, { hashedPrivateKey: 0, iv: 0 });
+  //     return wallet;
+  //   }
 
   static async getWalletByCardSerialNumber(cardSerialNumber: string) {
-    const wallet = await Wallet.findOne({ "card.cardSerialNumber": cardSerialNumber }, { hashedPrivateKey: 0, iv: 0 });
+    const wallet = await Wallet.findOne(
+      { "card.cardSerialNumber": cardSerialNumber },
+      { hashedPrivateKey: 0, iv: 0 }
+    );
     return wallet;
   }
 
@@ -30,7 +28,7 @@ export class WalletService {
   static async executeGaslessTransfer(
     userId: string,
     to: string,
-    amount: string,
+    amount: string
   ) {
     try {
       // Get user's wallet
@@ -48,7 +46,9 @@ export class WalletService {
       const amountBigInt = BigInt(amount);
 
       // Check if user has sufficient balance
-      const currentBalance = await OnchainInteractions.getTokenBalance(wallet.address);
+      const currentBalance = await OnchainInteractions.getTokenBalance(
+        wallet.address
+      );
       if (currentBalance < amountBigInt) {
         throw new Error("Insufficient balance");
       }
@@ -76,68 +76,11 @@ export class WalletService {
         amount: amount,
         permitTxHash: result.permitTxHash,
         transferTxHash: result.transferTxHash,
-        message: "Gasless transfer completed successfully"
+        message: "Gasless transfer completed successfully",
       };
     } catch (error) {
       throw new Error(`Gasless transfer failed: ${error}`);
     }
-  }
-
-  /**
-   * Get current token balance for a wallet
-   * @param userId - User ID
-   * @returns Current token balance
-   */
-  static async getTokenBalance(userId: string) {
-    try {
-      const wallet = await Wallet.findOne({ user: userId });
-      if (!wallet) {
-        throw new Error("Wallet not found");
-      }
-
-      const balance = await OnchainInteractions.getTokenBalance(wallet.address);
-      return {
-        address: wallet.address,
-        balance: balance.toString(),
-        balanceWei: balance
-      };
-    } catch (error) {
-      throw new Error(`Failed to get token balance: ${error}`);
-    }
-  }
-
-  /**
-   * Get permit nonce for a wallet
-   * @param userId - User ID
-   * @returns Current permit nonce
-   */
-  static async getPermitNonce(userId: string) {
-    try {
-      const wallet = await Wallet.findOne({ user: userId });
-      if (!wallet) {
-        throw new Error("Wallet not found");
-      }
-
-      const nonce = await OnchainInteractions.getPermitNonce(wallet.address);
-      return {
-        address: wallet.address,
-        nonce: nonce.toString()
-      };
-    } catch (error) {
-      throw new Error(`Failed to get permit nonce: ${error}`);
-    }
-  }
-
-  /**
-   * Validate wallet address format
-   * @param address - Address to validate
-   * @returns Validation result
-   */
-  static validateAddress(address: string) {
-    return {
-      isValid: ethers.isAddress(address),
-      address: address
-    };
   }
 
   /**
@@ -147,18 +90,23 @@ export class WalletService {
    */
   static async getWalletWithBalance(userId: string) {
     try {
-      const wallet = await Wallet.findOne({ user: userId }, { hashedPrivateKey: 0, iv: 0 });
+      const wallet = await Wallet.findOne(
+        { user: userId },
+        { hashedPrivateKey: 0, iv: 0 }
+      );
       if (!wallet) {
         throw new Error("Wallet not found");
       }
 
       // Get current on-chain balance
-      const onchainBalance = await OnchainInteractions.getTokenBalance(wallet.address);
-      
+      const onchainBalance = await OnchainInteractions.getTokenBalance(
+        wallet.address
+      );
+
       return {
         ...wallet.toObject(),
         onchainBalance: onchainBalance.toString(),
-        onchainBalanceWei: onchainBalance
+        onchainBalanceWei: onchainBalance,
       };
     } catch (error) {
       throw new Error(`Failed to get wallet with balance: ${error}`);
