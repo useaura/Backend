@@ -11,4 +11,13 @@ export const ENVIRONMENT = {
   DB: {
     URL: process.env.DB_URL,
   },
+  GOOGLE: {
+    CLIENT_ID: process.env.GOOGLE_CLIENT_ID,
+    CLIENT_SECRET: process.env.GOOGLE_CLIENT_SECRET,
+    REDIRECT_URI: process.env.GOOGLE_REDIRECT_URI,
+  },
+  ENCRYPTION: {
+    PIN_SALT_ROUNDS: process.env.PIN_SALT_ROUNDS,
+    DEFAULT_ENCRYPTION_KEY: process.env.DEFAULT_ENCRYPTION_KEY,
+  },
 };

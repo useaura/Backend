@@ -6,6 +6,7 @@ import { ENVIRONMENT } from "./common/config/environment";
 import { connectDb } from "./common/config/database";
 import cors from "cors";
 import logger from "./common/resources/logger";
+import authRoutes from "./modules/Auth/authRoutes";
 
 dotenv.config();
 
@@ -28,6 +29,8 @@ app.use(express.json());
 app.get("/api/health", (req: Request, res: Response) => {
   res.json({ status: "OK", message: "AuraPay API is running" });
 });
+
+app.use("/api/auth", authRoutes);
 
 // Socket.IO connection handling
 io.on("connection", (socket) => {
