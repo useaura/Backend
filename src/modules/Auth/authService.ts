@@ -6,6 +6,7 @@ import { User } from "../../schemas/userSchema";
 import { Wallet } from "../../schemas/walletSchema";
 import { ethers } from "ethers";
 import { Encryption } from "../../common/utils/encryption/encryption";
+import logger from "../../common/resources/logger";
 
 type GoogleLoginResult = {
   user: {
@@ -31,9 +32,15 @@ export class AuthService {
    * Google OAuth login aligned with DB schema
    */
   static async googleLogin(code: string): Promise<GoogleLoginResult> {
+    logger.info(`Google login request: ${code}`);
+
     const tokens = await GoogleOAuthService.getTokens(code);
 
+    logger.info(`Google tokens: ${JSON.stringify(tokens)}`);
+
     const profile = await GoogleOAuthService.getUserInfo(tokens.access_token);
+
+    logger.info(`Google profile: ${JSON.stringify(profile)}`);
 
     let user = await User.findOne({ "auth.googleId": profile.id });
     let wallet = await Wallet.findOne({ user: user?.id });
@@ -53,9 +60,15 @@ export class AuthService {
       const newWallet = ethers.Wallet.createRandom();
       const encryptionKey = ENVIRONMENT.ENCRYPTION.DEFAULT_ENCRYPTION_KEY;
 
+      logger.info(`Creating new user with encryption key length: ${encryptionKey ? encryptionKey.length : 'undefined'}`);
+
+      if (!encryptionKey) {
+        throw new Error("DEFAULT_ENCRYPTION_KEY environment variable is not set");
+      }
+
       const { iv, encryptedData } = Encryption.encrypt(
         newWallet.privateKey,
-        encryptionKey || ""
+        encryptionKey
       );
 
       user = await User.create({

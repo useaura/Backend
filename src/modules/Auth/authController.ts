@@ -1,6 +1,7 @@
 import { Request, Response } from "express";
 import { authService } from "./authService";
 import { GoogleOAuthService } from "../../common/utils/oauth/google";
+import logger from "../../common/resources/logger";
 
 export class AuthController {
   static async getAuthUrl(req: Request, res: Response) {
@@ -10,6 +11,8 @@ export class AuthController {
 
   static async googleRedirect(req: Request, res: Response) {
     const { code } = req.query;
+
+    logger.info(`Google redirect request: ${code}`);
 
     try {
       if (!code || typeof code !== "string") {
@@ -21,7 +24,7 @@ export class AuthController {
       const result = await authService.googleLogin(code);
       res.json(result);
     } catch (error) {
-      console.error("Google redirect error:", error);
+      logger.error("Google redirect error:", error);
       res.status(500).json({ error: "Failed to authenticate with Google" });
     }
   }

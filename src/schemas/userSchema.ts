@@ -17,7 +17,7 @@ const userSchema = new Schema<IUser>(
     auth: {
       googleId: { type: String, required: true },
       googleRefreshToken: { type: String, required: true },
-      refreshToken: { type: String, required: true },
+      refreshToken: { type: String },
     },
 
     name: { type: String, required: true },
