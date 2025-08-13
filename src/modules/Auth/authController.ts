@@ -1,7 +1,13 @@
 import { Request, Response } from "express";
 import { authService } from "./authService";
+import { GoogleOAuthService } from "../../common/utils/oauth/google";
 
 export class AuthController {
+  static async getAuthUrl(req: Request, res: Response) {
+    const authUrl = GoogleOAuthService.getAuthUrl();
+    res.json({ authUrl });
+  }
+
   static async googleLogin(req: Request, res: Response) {
     const { code } = req.body;
 
