@@ -1,0 +1,13 @@
+export var BAD_REQUEST = 400;
+export var OK = 200;
+export var CREATED = 201;
+export var ACCEPTED = 202;
+export var NOT_FOUND = 404;
+export var UNAUTHORIZED = 401;
+export var FORBIDDEN = 403;
+export var INTERNAL_SERVER_ERROR = 500;
+export var SERVICE_UNAVAILABLE = 503;
+export var PERMANENT_REDIRECT = 301;
+export var TEMPORARY_REDIRECT = 302;
+export var DUPLICATE_RECORD = 409;
+export var UNPROCESSABLE_ENTITY = 422;

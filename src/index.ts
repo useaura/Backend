@@ -8,6 +8,8 @@ import cors from "cors";
 import logger from "./common/resources/logger";
 import authRoutes from "./modules/Auth/authRoutes";
 import walletRoutes from "./modules/Wallet/walletRoutes";
+import profileRoutes from "./modules/Profile/profileRoutes";
+import settingsRoutes from "./modules/Settings/settingsRoutes";
 
 dotenv.config();
 
@@ -33,6 +35,8 @@ app.get("/api/health", (req: Request, res: Response) => {
 
 app.use("/api/auth", authRoutes);
 app.use("/api/wallet", walletRoutes);
+app.use("/api/profile", profileRoutes);
+app.use("/api/settings", settingsRoutes);
 
 // Socket.IO connection handling
 io.on("connection", (socket) => {

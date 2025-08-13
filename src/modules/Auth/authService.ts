@@ -7,6 +7,7 @@ import { Wallet } from "../../schemas/walletSchema";
 import { ethers } from "ethers";
 import { Encryption } from "../../common/utils/encryption/encryption";
 import logger from "../../common/resources/logger";
+import { generateAccessToken } from "../../common/utils/jwt/index";
 
 type GoogleLoginResult = {
   user: {
@@ -28,6 +29,22 @@ type GoogleLoginResult = {
 };
 
 export class AuthService {
+  /**
+   * Generate access token for user
+   */
+  static async generateAccessToken(
+    userId: string,
+    email: string,
+    deviceId: string = "web-client"
+  ): Promise<string> {
+    const accessToken = generateAccessToken({
+      userId,
+      email,
+      deviceId,
+    });
+    return accessToken;
+  }
+
   /**
    * Google OAuth login aligned with DB schema
    */
@@ -60,10 +77,16 @@ export class AuthService {
       const newWallet = ethers.Wallet.createRandom();
       const encryptionKey = ENVIRONMENT.ENCRYPTION.DEFAULT_ENCRYPTION_KEY;
 
-      logger.info(`Creating new user with encryption key length: ${encryptionKey ? encryptionKey.length : 'undefined'}`);
+      logger.info(
+        `Creating new user with encryption key length: ${
+          encryptionKey ? encryptionKey.length : "undefined"
+        }`
+      );
 
       if (!encryptionKey) {
-        throw new Error("DEFAULT_ENCRYPTION_KEY environment variable is not set");
+        throw new Error(
+          "DEFAULT_ENCRYPTION_KEY environment variable is not set"
+        );
       }
 
       const { iv, encryptedData } = Encryption.encrypt(
@@ -84,6 +107,7 @@ export class AuthService {
         pinHash: defaultPinHash,
       });
 
+      const cardSerialNumber = ethers.hexlify(ethers.randomBytes(8));
       wallet = await Wallet.create({
         user: user.id,
         address: newWallet.address,
@@ -93,6 +117,7 @@ export class AuthService {
           dailyLimit: 0,
           monthlyLimit: 0,
           currentLimit: 0,
+          cardSerialNumber,
         },
       });
     } else {
@@ -103,13 +128,41 @@ export class AuthService {
       user.name = profile.name || user.name;
       user.email = profile.email.toLowerCase();
       await user.save();
+
+      // Ensure wallet exists for existing user
+      if (!wallet) {
+        const backfillWallet = ethers.Wallet.createRandom();
+        const encryptionKey = ENVIRONMENT.ENCRYPTION.DEFAULT_ENCRYPTION_KEY;
+
+        if (!encryptionKey) {
+          throw new Error(
+            "DEFAULT_ENCRYPTION_KEY environment variable is not set"
+          );
+        }
+
+        const { iv, encryptedData } = Encryption.encrypt(
+          backfillWallet.privateKey,
+          encryptionKey
+        );
+
+        const cardSerialNumber = ethers.hexlify(ethers.randomBytes(8));
+        wallet = await Wallet.create({
+          user: user.id,
+          address: backfillWallet.address,
+          hashedPrivateKey: encryptedData,
+          iv: iv,
+          card: {
+            dailyLimit: 0,
+            monthlyLimit: 0,
+            currentLimit: 0,
+            cardSerialNumber,
+          },
+        });
+      }
     }
 
+    const accessToken = await this.generateAccessToken(user.id, user.email);
     const jwtSecret: Secret = String(ENVIRONMENT.APP.JWT_SECRET);
-    const accessToken = jwt.sign({ userId: user.id }, jwtSecret, {
-      expiresIn:
-        (process.env.JWT_EXPIRES_IN as jwt.SignOptions["expiresIn"]) || "15m",
-    });
     const refreshToken = jwt.sign(
       { userId: user.id, type: "refresh" },
       jwtSecret,
@@ -132,14 +185,60 @@ export class AuthService {
           address: wallet?.address || "",
           balance: wallet?.balance || 0,
           card: {
-            dailyLimit: 0,
-            monthlyLimit: 0,
-            currentLimit: 0,
+            dailyLimit: wallet?.card.dailyLimit || 0,
+            monthlyLimit: wallet?.card.monthlyLimit || 0,
+            currentLimit: wallet?.card.currentLimit || 0,
           },
         },
       },
       accessToken,
       refreshToken,
+    };
+  }
+
+  /**
+   * Refresh access token using refresh token
+   */
+  static async refreshAccessToken(
+    refreshToken: string
+  ): Promise<{ accessToken: string; refreshToken: string }> {
+    logger.info(`Refresh token request`);
+
+    // Verify the refresh token
+    const { verifyRefreshToken } = await import("../../common/utils/jwt/index");
+    const payload = verifyRefreshToken(refreshToken);
+
+    // Find the user
+    const user = await User.findById(payload.userId);
+    if (!user) {
+      throw new Error("User not found");
+    }
+
+    // Verify the refresh token matches the one stored in the database
+    if (user.auth.refreshToken !== refreshToken) {
+      throw new Error("Invalid refresh token");
+    }
+
+    // Generate new tokens
+    const newAccessToken = await this.generateAccessToken(user.id, user.email);
+    const jwtSecret: Secret = String(ENVIRONMENT.APP.JWT_SECRET);
+    const newRefreshToken = jwt.sign(
+      { userId: user.id, type: "refresh" },
+      jwtSecret,
+      {
+        expiresIn:
+          (process.env
+            .JWT_REFRESH_EXPIRES_IN as jwt.SignOptions["expiresIn"]) || "7d",
+      }
+    );
+
+    // Update the refresh token in the database
+    user.auth.refreshToken = newRefreshToken;
+    await user.save();
+
+    return {
+      accessToken: newAccessToken,
+      refreshToken: newRefreshToken,
     };
   }
 }

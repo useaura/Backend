@@ -3,5 +3,7 @@
 combined.log
 /logs
 /logs/*
+logs/*
 /logs/**
 /logs/**/*
+AuraPay_Profile_Postman_Collection.json

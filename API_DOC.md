@@ -2,6 +2,8 @@
 
 ### **Authentication**
 
+**BaseUrl:** `http://localhost:4000`
+
 All protected routes require a JWT in the `Authorization` header:
 
 ```
@@ -12,29 +14,15 @@ Authorization: Bearer <token>
 
 ### **Public Endpoints**
 
-#### **POST** `/api/auth/google`
+#### **GET** `/api/auth/google/url`
 
 Authenticate user with Google and create wallet if new.
-
-**Body:**
-
-```json
-{
-  "idToken": "GOOGLE_ID_TOKEN"
-}
-```
 
 **Response:**
 
 ```json
 {
-  "token": "JWT_TOKEN",
-  "user": {
-    "id": "66b8...",
-    "name": "John Doe",
-    "email": "john@example.com",
-    "avatar": "https://..."
-  }
+  "token": "JWT_TOKEN"
 }
 ```
 
@@ -191,34 +179,53 @@ Simulate incoming payment (testing only).
 
 ---
 
-#### **GET** `/api/settings`
+## Profile Management
 
-Get user settings.
+#### **GET** `/api/profile`
+
+Get user profile information including display name, card limits, and security controls.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
 
 **Response:**
 
 ```json
 {
-  "settings": {
-    "name": "John Doe",
-    "email": "john@example.com",
-    "panicMode": false
+  "displayName": "John Doe",
+  "email": "john@example.com",
+  "cardLimits": {
+    "dailyLimit": 1000,
+    "monthlyLimit": 10000,
+    "currentLimit": 250
+  },
+  "controls": {
+    "panicMode": false,
+    "reversePinEnabled": true
   }
 }
 ```
 
 ---
 
-#### **PUT** `/api/settings`
+#### **PUT** `/api/profile/display-name`
 
-Update user settings (name, panic mode).
+Update user's display name.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
 
 **Body:**
 
 ```json
 {
-  "name": "New Name",
-  "panicMode": true
+  "displayName": "New Display Name"
 }
 ```
 
@@ -226,12 +233,187 @@ Update user settings (name, panic mode).
 
 ```json
 {
-  "settings": {
-    "name": "New Name",
-    "panicMode": true
+  "message": "Display name updated successfully",
+  "displayName": "New Display Name"
+}
+```
+
+---
+
+#### **PUT** `/api/profile/card-limits`
+
+Update card spending limits.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
+
+**Body:**
+
+```json
+{
+  "dailyLimit": 1500,
+  "monthlyLimit": 15000
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Card limits updated successfully",
+  "cardLimits": {
+    "dailyLimit": 1500,
+    "monthlyLimit": 15000,
+    "currentLimit": 250
   }
 }
 ```
+
+---
+
+#### **PUT** `/api/profile/panic-mode`
+
+Toggle panic mode on/off.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
+
+**Body:**
+
+```json
+{
+  "enabled": true
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Panic mode enabled successfully",
+  "panicMode": true
+}
+```
+
+---
+
+#### **PUT** `/api/profile/reverse-pin`
+
+Toggle reverse PIN functionality.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
+
+**Body:**
+
+```json
+{
+  "enabled": false
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "Reverse PIN disabled successfully",
+  "reversePinEnabled": false
+}
+```
+
+---
+
+#### **PUT** `/api/profile/change-pin`
+
+Change card PIN.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
+
+**Body:**
+
+```json
+{
+  "currentPin": "0000",
+  "newPin": "5678"
+}
+```
+
+**Response:**
+
+```json
+{
+  "message": "PIN changed successfully"
+}
+```
+
+---
+
+#### **POST** `/api/profile/verify-pin`
+
+Verify PIN and detect panic mode activation via reverse PIN.
+
+**Headers:**
+
+```
+Authorization: Bearer <access_token>
+```
+
+**Body:**
+
+```json
+{
+  "pin": "1234"
+}
+```
+
+**Response (Normal PIN):**
+
+```json
+{
+  "valid": true,
+  "panicMode": false,
+  "message": "PIN verified successfully"
+}
+```
+
+**Response (Reverse PIN - Panic Mode Activated):**
+
+```json
+{
+  "valid": true,
+  "panicMode": true,
+  "message": "Panic mode activated via reverse PIN"
+}
+```
+
+---
+
+#### **Settings Alias** `/api/settings/*`
+
+`/api/settings` is an alias of `/api/profile` with the same authentication and handlers. Use the following endpoints:
+
+- `GET /api/settings` → same as `GET /api/profile`
+- `PUT /api/settings/display-name` → same as `PUT /api/profile/display-name`
+- `PUT /api/settings/card-limits` → same as `PUT /api/profile/card-limits`
+- `PUT /api/settings/panic-mode` → same as `PUT /api/profile/panic-mode`
+- `PUT /api/settings/reverse-pin` → same as `PUT /api/profile/reverse-pin`
+- `PUT /api/settings/change-pin` → same as `PUT /api/profile/change-pin`
+- `POST /api/settings/verify-pin` → same as `POST /api/profile/verify-pin`
+
+Note: There is no single `PUT /api/settings` endpoint; use the specific routes above.
 
 ---
 

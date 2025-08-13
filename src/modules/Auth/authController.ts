@@ -29,6 +29,17 @@ export class AuthController {
     }
   }
 
+  
+  static async login(req: Request, res: Response) {
+    // Password login is not implemented in this project.
+    // Use Google OAuth via AuthController.googleLogin or AuthController.googleRedirect.
+    return res.status(501).json({
+      error: "Not implemented",
+      message: "Use Google OAuth login endpoint instead."
+    });
+  }
+
+
   static async googleLogin(req: Request, res: Response) {
     const { code } = req.body;
 
@@ -41,6 +52,22 @@ export class AuthController {
       res.json(result);
     } catch (error) {
       res.status(500).json({ error: "Failed to login" });
+    }
+  }
+
+  static async refreshToken(req: Request, res: Response) {
+    const { refreshToken } = req.body;
+
+    try {
+      if (!refreshToken) {
+        return res.status(400).json({ error: "Refresh token is required" });
+      }
+
+      const result = await authService.refreshAccessToken(refreshToken);
+      res.json(result);
+    } catch (error) {
+      logger.error("Token refresh error:", error);
+      res.status(401).json({ error: "Invalid or expired refresh token" });
     }
   }
 }

@@ -28,7 +28,7 @@ export const generateAccessToken = (payload: Omit<AccessTokenPayload, 'type'>): 
   };
 
   return jwt.sign(tokenPayload, ENVIRONMENT.APP.JWT_SECRET, {
-    expiresIn: '15m', // 15 minutes
+    expiresIn: '2h', // 2 hours - balanced security vs usability
     issuer: 'sylis-auth',
     audience: 'sylis-users'
   });

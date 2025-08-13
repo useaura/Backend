@@ -24,3 +24,177 @@
 2025-08-13 13:29:01 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6Ny7d2ImhgChTEYOl4TjpLbmIN6Rj7cpa7E68186s4cWgSHMBlRRScQ0RP2dXRCZdvq7OAgkNSY0YXs7HZ62rzQJT6RVb4Y43zyAwHakqNE_QuoYmDf7oqLOZ77hm93bX8e366zwl3bLkNxC8lM4DBtLuy1hvquJ-heEaCgYKAVoSARYSFQHGX2MizTb9tHDl-R3uRepkxGCiTw0175","refresh_token":"1//03awZwe4-Ee8aCgYIARAAGAMSNwF-L9Irqm3uifr39KFNSKlshrL_-lzo4Q-13MNcoVBIq3sanrSejU7-t_j_qyO1hD17K85Uj4E","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755091740477} 
 2025-08-13 13:29:03 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
 2025-08-13 13:29:03 [INFO]: Creating new user with encryption key length: 64 
+2025-08-13 13:37:22 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 13:37:22 [INFO]: MongoDB Connected: localhost 
+2025-08-13 13:37:22 [INFO]: ✅ Database connected successfully 
+2025-08-13 13:49:49 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 13:49:49 [INFO]: MongoDB Connected: localhost 
+2025-08-13 13:49:49 [INFO]: ✅ Database connected successfully 
+2025-08-13 13:49:54 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 13:49:54 [INFO]: MongoDB Connected: localhost 
+2025-08-13 13:49:54 [INFO]: ✅ Database connected successfully 
+2025-08-13 13:50:03 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 13:50:03 [INFO]: MongoDB Connected: localhost 
+2025-08-13 13:50:03 [INFO]: ✅ Database connected successfully 
+2025-08-13 15:59:49 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 15:59:49 [INFO]: MongoDB Connected: localhost 
+2025-08-13 15:59:49 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:07:10 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:07:10 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:07:10 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:08:21 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:08:21 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:08:21 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:11:25 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:11:25 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:11:25 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:12:54 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:12:55 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:12:55 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:27:31 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:27:31 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:27:31 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:28:54 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:28:54 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:28:54 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:34:27 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:34:27 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:34:27 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:34:47 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:34:47 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:34:47 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:34:52 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:34:52 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:34:52 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:36:45 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:36:45 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:36:45 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:36:55 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:36:55 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:36:55 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:37:32 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:37:32 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:37:32 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:40:25 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:40:25 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:40:25 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:41:11 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:41:11 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:41:11 [INFO]: ✅ Database connected successfully 
+2025-08-13 16:43:46 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 16:43:46 [INFO]: MongoDB Connected: localhost 
+2025-08-13 16:43:46 [INFO]: ✅ Database connected successfully 
+2025-08-13 17:53:24 [INFO]: Google redirect request: 4/0AVMBsJjnkQACf_z_luJLukfunePHLxhu8c_iptgcBKl-a3aO2j-dPdZ8MmOGmbZuyFfAag 
+2025-08-13 17:53:24 [INFO]: Google login request: 4/0AVMBsJjnkQACf_z_luJLukfunePHLxhu8c_iptgcBKl-a3aO2j-dPdZ8MmOGmbZuyFfAag 
+2025-08-13 17:53:25 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6Nx6BzxonuCDmPcPIHJswNvA3ARA5GGg8WMccGJheNwvJyfZZ2HxKjxVuQtaACdc_-bYEeY27iXTRRQcy7IBqswbDgK1U6ldOL1ylwIB3Ws_5f6GJ3Y5cNUiwgLTPeh1YzCfIMRRd3xiNBBpw6FTW718LuwK0bMZn2qdaCgYKAQQSARYSFQHGX2Milwa5mHf1sni1_ZPQPFCJgw0175","refresh_token":"1//03OsM3HMFldVlCgYIARAAGAMSNwF-L9Ir_dcNDQ_XDTndyED1wLcYl-yDUssl-qZfuY6K-WneePTbgTcIMLEWiC-epkBDGgMov-o","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755107604925} 
+2025-08-13 17:53:27 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 18:00:27 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:00:27 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:00:27 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:00:33 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:00:33 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:00:33 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:00:43 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:00:44 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:00:44 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:01:13 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:01:13 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:01:13 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:01:22 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:01:22 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:01:22 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:01:33 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:01:33 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:01:33 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:02:20 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:02:20 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:02:20 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:07:13 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:07:13 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:07:13 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:08:21 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:08:21 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:08:21 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:10:31 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 18:10:31 [INFO]: MongoDB Connected: localhost 
+2025-08-13 18:10:31 [INFO]: ✅ Database connected successfully 
+2025-08-13 18:19:43 [INFO]: Google redirect request: 4/0AVMBsJhK6jDzNpkGhWC74tqydcjRDE6ysCeGzrlLnKEVVTHviNlmqGmHpXeVvhxv0bHEqg 
+2025-08-13 18:19:43 [INFO]: Google login request: 4/0AVMBsJhK6jDzNpkGhWC74tqydcjRDE6ysCeGzrlLnKEVVTHviNlmqGmHpXeVvhxv0bHEqg 
+2025-08-13 18:19:44 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6NySwo4uymKdPC_UN6Fb58yLNjSgMO3QOkSbRaaBqSXREaCuCTf-ktaaxPm5_IuuqtEiX-SDNsvypl79LTaeIUEhfv_l6pk2oU0uI559mnaIwj_A9dQ5o-i-NA3zrPuMhEfkIx6ZScCixcPL5JV4JCzWuz3Lt3FTVeNRaCgYKAesSARYSFQHGX2MiBK7TSX7cEZa9QMxIQ9UvGg0175","refresh_token":"1//038azxE7XS0fjCgYIARAAGAMSNwF-L9IrJ2CaZYi9Gq-uwYUzr7LHulAuDyP6M_Xogh3Nph8RKAoAXGq-EDNXFdVzi3ij6Au1cmM","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755109183016} 
+2025-08-13 18:19:44 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 18:19:44 [INFO]: Creating new user with encryption key length: 64 
+2025-08-13 18:19:44 [ERROR]: Google redirect error: Wallet validation failed: card.cardSerialNumber: Path `card.cardSerialNumber` is required. {"errors":{"card.cardSerialNumber":{"name":"ValidatorError","message":"Path `card.cardSerialNumber` is required.","properties":{"message":"Path `card.cardSerialNumber` is required.","type":"required","path":"card.cardSerialNumber"},"kind":"required","path":"card.cardSerialNumber"}},"_message":"Wallet validation failed","stack":"ValidationError: Wallet validation failed: card.cardSerialNumber: Path `card.cardSerialNumber` is required.\n    at Document.invalidate (/home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/document.js:3219:32)\n    at /home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/document.js:3012:17\n    at /home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)"}
+2025-08-13 21:39:03 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 21:39:03 [INFO]: MongoDB Connected: localhost 
+2025-08-13 21:39:03 [INFO]: ✅ Database connected successfully 
+2025-08-13 21:39:04 [INFO]: Google redirect request: 4/0AVMBsJjAqEag9EmBTTcgd3sLz3ujQIrHgUaugOE2b6_AXOOdbkXsjqkylrzEBlAvwWQ0dA 
+2025-08-13 21:39:04 [INFO]: Google login request: 4/0AVMBsJjAqEag9EmBTTcgd3sLz3ujQIrHgUaugOE2b6_AXOOdbkXsjqkylrzEBlAvwWQ0dA 
+2025-08-13 21:39:05 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6Nzf4z56NkM-s7MuqXSNSzndchlSqo91K1BBsv6G9MjGTBJQv2UngC0ifIjcy546rAQxDSiBgFrub-2d-FCBG8EXtcVBRWXWYcC7KNk-kQfoUPMgRdPfhh-l6vuyNyQGQhuR56v-ZZQSV_WWhb9Lx-lWM-RsD7XEn0AHaCgYKAYMSARYSFQHGX2MipWa_cxf-A8Ai3H_q5FdTxA0175","refresh_token":"1//010Mo4vydEfnpCgYIARAAGAESNwF-L9Ir7hjInZIZOPX5DDie7Lj-_sDwaMYB88fJmx-tbGnuLy4rjjFevOnKfmePTEA6vKHz5Zk","scope":"https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email openid","token_type":"Bearer","expiry_date":1755121144467} 
+2025-08-13 21:39:06 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 21:40:31 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 21:40:31 [INFO]: MongoDB Connected: localhost 
+2025-08-13 21:40:31 [INFO]: ✅ Database connected successfully 
+2025-08-13 21:46:42 [INFO]: Google redirect request: 4/0AVMBsJgqPCel7nVxnLw80uiuBUJ_VMy67rzaJjQ_H3PkGjIDd5g6taSTSp0Br3kDu_3EPA 
+2025-08-13 21:46:42 [INFO]: Google login request: 4/0AVMBsJgqPCel7nVxnLw80uiuBUJ_VMy67rzaJjQ_H3PkGjIDd5g6taSTSp0Br3kDu_3EPA 
+2025-08-13 21:46:43 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6NyQMg8OrhWrN27qHuJpw2ul4AFso5I_Tu8wvwoJsTY7eBkuz0x76Z0Njc6VJ3aTUUbUeaKVK0S3MkbVyQ3SjfkiPx1mdtOHGau9G0bBlMNVkga3ePblEHTplJRuNePwIOinBQLSIjNWnknFcV7qc5JXOTAQPFO_k6IGaCgYKAfQSARYSFQHGX2Mihi4LJkjD0MrDibyosZQO-Q0175","refresh_token":"1//01yFVi_-NQxPrCgYIARAAGAESNwF-L9Irf-JecfhQuttfwV1MwaIrUmoQfWMzCRQ4gBbFsQ1-A23tguO5xRmc4pSWL_0Sp95hdmk","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755121602936} 
+2025-08-13 21:46:44 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 22:08:06 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 22:08:06 [INFO]: MongoDB Connected: localhost 
+2025-08-13 22:08:06 [INFO]: ✅ Database connected successfully 
+2025-08-13 22:08:37 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 22:08:37 [INFO]: MongoDB Connected: localhost 
+2025-08-13 22:08:37 [INFO]: ✅ Database connected successfully 
+2025-08-13 22:12:41 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 22:12:41 [INFO]: MongoDB Connected: localhost 
+2025-08-13 22:12:41 [INFO]: ✅ Database connected successfully 
+2025-08-13 22:24:17 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 22:24:17 [INFO]: MongoDB Connected: localhost 
+2025-08-13 22:24:17 [INFO]: ✅ Database connected successfully 
+2025-08-13 22:40:40 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 22:40:40 [INFO]: MongoDB Connected: localhost 
+2025-08-13 22:40:40 [INFO]: ✅ Database connected successfully 
+2025-08-13 22:48:25 [INFO]: Google redirect request: 4/0AVMBsJiTCdsnSk8HxWUIo2nf-2KjPxbYgDBm7XTJyU8PacBbhabGn0mt3Viu54KUEpdnsQ 
+2025-08-13 22:48:25 [INFO]: Google login request: 4/0AVMBsJiTCdsnSk8HxWUIo2nf-2KjPxbYgDBm7XTJyU8PacBbhabGn0mt3Viu54KUEpdnsQ 
+2025-08-13 22:48:27 [ERROR]: Google redirect error: Failed to exchange code for tokens: request to https://oauth2.googleapis.com/token failed, reason:  {"stack":"Error: Failed to exchange code for tokens: request to https://oauth2.googleapis.com/token failed, reason: \n    at Function.getTokens (/home/moses/Desktop/Hacks/auraPay/Backend/src/common/utils/oauth/google.ts:65:13)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async Function.googleLogin (/home/moses/Desktop/Hacks/auraPay/Backend/src/modules/Auth/authService.ts:77:20)\n    at async googleRedirect (/home/moses/Desktop/Hacks/auraPay/Backend/src/modules/Auth/authController.ts:24:22)"}
+2025-08-13 22:50:53 [INFO]: Google redirect request: 4/0AVMBsJiAEhr5Y9xRwr6U8J9--4FrHZi1z9HgsxbzeV13b9BI1Vlcevxfeb4K0xEMeepuvQ 
+2025-08-13 22:50:53 [INFO]: Google login request: 4/0AVMBsJiAEhr5Y9xRwr6U8J9--4FrHZi1z9HgsxbzeV13b9BI1Vlcevxfeb4K0xEMeepuvQ 
+2025-08-13 22:50:54 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6NyRchgBwqY4TV0-6xystRR-uyxBpNzCw0V-U6mHlflUVCkMPubFPTLik4A6rendL4CW9exVZHISXsxdBaCZeOcc0ZWbgxUMSjy2kLcYEi3e8a4tl698A9BXzo51o-spbOFEY1idwEjmlt32fPTVTXxNuLTePQFjLFp0aCgYKAYwSARYSFQHGX2MieBtZzK5LOZrKvw_DZWJ-fw0175","refresh_token":"1//03ECPIiziQ2haCgYIARAAGAMSNwF-L9IrHE6adYJyTv5mg14LgKyBdtgmwXPQMEOJIQPnYhMW4H0boBjZIDCnR1dUCWNug_rNUH0","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755125453519} 
+2025-08-13 22:50:55 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 22:50:55 [INFO]: Creating new user with encryption key length: 64 
+2025-08-13 22:50:55 [ERROR]: Google redirect error: Wallet validation failed: card.cardSerialNumber: Path `card.cardSerialNumber` is required. {"errors":{"card.cardSerialNumber":{"name":"ValidatorError","message":"Path `card.cardSerialNumber` is required.","properties":{"message":"Path `card.cardSerialNumber` is required.","type":"required","path":"card.cardSerialNumber"},"kind":"required","path":"card.cardSerialNumber"}},"_message":"Wallet validation failed","stack":"ValidationError: Wallet validation failed: card.cardSerialNumber: Path `card.cardSerialNumber` is required.\n    at Document.invalidate (/home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/document.js:3219:32)\n    at /home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/document.js:3012:17\n    at /home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)"}
+2025-08-13 22:51:46 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 22:51:46 [INFO]: MongoDB Connected: localhost 
+2025-08-13 22:51:46 [INFO]: ✅ Database connected successfully 
+2025-08-13 22:53:32 [INFO]: Google redirect request: 4/0AVMBsJgI7CwNwwo-dWKgNQZ9_s8et7MMghGmWnzT0tdqezPvfYltgU7e5wk1too0HPELdg 
+2025-08-13 22:53:32 [INFO]: Google login request: 4/0AVMBsJgI7CwNwwo-dWKgNQZ9_s8et7MMghGmWnzT0tdqezPvfYltgU7e5wk1too0HPELdg 
+2025-08-13 22:53:32 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6NzigmInVNpVOUqToiUxJfzjk1VTy5xPW5E5qkGmtCusF-PoLXjhz4YslTtzWlisg7bERzczlz19zpYjFHKog3LtSYlcEUouA7lMWnsl5vlWGczgI4tqDeahAqG-GIlLzz5SwlQ-E36xWs9i8TVw-rZ5q4SO9nyi4LeIaCgYKAW0SARYSFQHGX2MiJCJ3INwkwfHka6C73dtvZA0175","refresh_token":"1//03rMJq3eHWOgGCgYIARAAGAMSNwF-L9IrP2pHNnnf7oM-EUhgre0NhXfunxwWHSDYuzzRqVfosurZk4wZLn4Q5uc6vfGkbkHibTI","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755125611857} 
+2025-08-13 22:53:33 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 23:07:55 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 23:07:55 [INFO]: MongoDB Connected: localhost 
+2025-08-13 23:07:55 [INFO]: ✅ Database connected successfully 
+2025-08-13 23:12:33 [INFO]: Google redirect request: 4/0AVMBsJi-1DZoUCUCUuhgOp8t0HtKGRx4Kw2FZ6QqooG4TjRPwZOioSeATNYQ58iSKGaIVg 
+2025-08-13 23:12:33 [INFO]: Google login request: 4/0AVMBsJi-1DZoUCUCUuhgOp8t0HtKGRx4Kw2FZ6QqooG4TjRPwZOioSeATNYQ58iSKGaIVg 
+2025-08-13 23:12:34 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6Nxl-L3oWTjk0FUPPrRsIYUxBEELC-6Z1fUA7YVI2dAlBYC4gL9piufWuHnxYXhIeUp-FQAFtQwi4sIlio36aKVLn8Q7EEQ8ejaXvhGQllyzZKfnTDZnt03jir6bNmismVDa8wHVDvA5TvtwbZ8cWQfnxXxshlaBaM6haCgYKAY4SARYSFQHGX2MigV-WCBw5hbSCqWhEfIRyMw0175","refresh_token":"1//03jb6pqbseunCCgYIARAAGAMSNwF-L9IrRSBNPgEdItze-r1FEOdatElIWUKXlm3_KNeM0PB3uVGMZpAife5HHUX9LTYNy8rMH6U","scope":"https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile openid","token_type":"Bearer","expiry_date":1755126753504} 
+2025-08-13 23:12:35 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-13 23:12:35 [INFO]: Creating new user with encryption key length: 64 
+2025-08-13 23:12:35 [ERROR]: Google redirect error: Wallet validation failed: card.cardSerialNumber: Path `card.cardSerialNumber` is required. {"errors":{"card.cardSerialNumber":{"name":"ValidatorError","message":"Path `card.cardSerialNumber` is required.","properties":{"message":"Path `card.cardSerialNumber` is required.","type":"required","path":"card.cardSerialNumber"},"kind":"required","path":"card.cardSerialNumber"}},"_message":"Wallet validation failed","stack":"ValidationError: Wallet validation failed: card.cardSerialNumber: Path `card.cardSerialNumber` is required.\n    at Document.invalidate (/home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/document.js:3219:32)\n    at /home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/document.js:3012:17\n    at /home/moses/Desktop/Hacks/auraPay/Backend/node_modules/mongoose/lib/schematype.js:1368:9\n    at process.processTicksAndRejections (node:internal/process/task_queues:85:11)"}
+2025-08-13 23:14:11 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 23:14:11 [INFO]: MongoDB Connected: localhost 
+2025-08-13 23:14:11 [INFO]: ✅ Database connected successfully 
+2025-08-13 23:17:03 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 23:17:03 [INFO]: MongoDB Connected: localhost 
+2025-08-13 23:17:03 [INFO]: ✅ Database connected successfully 
+2025-08-13 23:40:28 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 23:40:28 [INFO]: MongoDB Connected: localhost 
+2025-08-13 23:40:28 [INFO]: ✅ Database connected successfully 
+2025-08-13 23:48:01 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-13 23:48:01 [INFO]: MongoDB Connected: localhost 
+2025-08-13 23:48:01 [INFO]: ✅ Database connected successfully 
+2025-08-14 00:03:59 [INFO]: Google redirect request: 4/0AVMBsJj6_UTbFQUAWzuBI3V9Wn1oG6rbXUnQJb2hKF19AglA8vM5y2QBd85ixyYVE2WaVw 
+2025-08-14 00:03:59 [INFO]: Google login request: 4/0AVMBsJj6_UTbFQUAWzuBI3V9Wn1oG6rbXUnQJb2hKF19AglA8vM5y2QBd85ixyYVE2WaVw 
+2025-08-14 00:04:01 [INFO]: Google tokens: {"access_token":"ya29.a0AS3H6Nz_ptfr9damnjypcV-E_lR4SfQ93BTnT4aFceBpuAjngrzq-0rEjIf8XSE2XkyM6N6wN_P528bP4AfXUiioYMW0xTCtI23yULF1goutlq0-U5IIJinX37Ap6oJwk1NvYr2zzwjteJvwiv23p_4gm1aiZcgyGcIwaLE-aCgYKAdwSARYSFQHGX2MixFrw6uEqVRwIEQ1LZ_HjgQ0175","refresh_token":"1//032EEwhySUfmOCgYIARAAGAMSNwF-L9IrSZ3wrXQnrLTAQfTCleq5hGjGbRGQkQXz8O7GYqluI9EJxSX_hpx5psmJCF3a8C61EHk","scope":"openid https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile","token_type":"Bearer","expiry_date":1755129840091} 
+2025-08-14 00:04:03 [INFO]: Google profile: {"id":"112106797766561982888","email":"moseschizaram8@gmail.com","verified_email":true,"name":"Moses Sunday","given_name":"Moses","family_name":"Sunday","picture":"https://lh3.googleusercontent.com/a/ACg8ocJ6PQsv_sA62TwC6qrkBWboLzOF_jDUHB19XwMudfA_OUZVdrD1=s96-c","locale":""} 
+2025-08-14 00:07:00 [INFO]: updateCardLimits: Updating card limits for wallet 689d19e3f149731112e07e04 {"userId":"689d0dd359d8a277acb30f93","updateFields":{"card.dailyLimit":1500,"card.monthlyLimit":15000}}
+2025-08-14 00:25:01 [INFO]: AuraPay Running on http://localhost:4000 
+2025-08-14 00:25:01 [INFO]: MongoDB Connected: localhost 
+2025-08-14 00:25:01 [INFO]: ✅ Database connected successfully 

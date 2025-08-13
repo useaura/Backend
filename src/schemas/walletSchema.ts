@@ -22,9 +22,10 @@ const walletSchema = new Schema<IWallet>(
     hashedPrivateKey: { type: String, required: true },
     iv: { type: String, required: true },
     card: {
-      dailyLimit: { type: Number, default: 0 },
-      monthlyLimit: { type: Number, default: 0 },
+      dailyLimit: { type: Number, default: 1000 },
+      monthlyLimit: { type: Number, default: 10000 },
       currentLimit: { type: Number, default: 0 },
+      cardSerialNumber: { type: String, required: true },
     },
   },
   {

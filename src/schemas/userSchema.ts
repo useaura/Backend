@@ -10,6 +10,7 @@ export interface IUser extends Document {
   email: string;
   pinHash: string;
   panicMode: boolean;
+  reversePinEnabled: boolean;
 }
 
 const userSchema = new Schema<IUser>(
@@ -24,6 +25,7 @@ const userSchema = new Schema<IUser>(
     email: { type: String, required: true },
     pinHash: { type: String, required: true },
     panicMode: { type: Boolean, default: false },
+    reversePinEnabled: { type: Boolean, default: true },
   },
   {
     timestamps: true,

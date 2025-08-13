@@ -64,7 +64,7 @@ npm install
 
 ```env
 PORT=4000
-MONGO_URI=mongodb://localhost:27017/walletdb
+MONGO_URI=mongodb://localhost:27017/auraPay
 JWT_SECRET=super_secret_jwt_key_here
 JWT_EXPIRES_IN=7d
 GOOGLE_CLIENT_ID=your_google_client_id.apps.googleusercontent.com
