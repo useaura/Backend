@@ -25,7 +25,9 @@ export class AuthController {
       res.json(result);
     } catch (error) {
       logger.error("Google redirect error:", error);
-      res.status(500).json({ error: "Failed to authenticate with Google" });
+      // Return detailed error message to aid debugging. Consider reverting to a generic message in production.
+      const message = error instanceof Error ? error.message : "Failed to authenticate with Google";
+      res.status(500).json({ error: message });
     }
   }
 

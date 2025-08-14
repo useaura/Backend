@@ -32,6 +32,9 @@ export class OnchainInteractions {
   }
 
   static async getERC20Contract(address: string): Promise<ERC20PermitContract> {
+    if (!address || !ethers.isAddress(address) || address.toLowerCase() === "0x0000000000000000000000000000000000000000") {
+      throw new Error("Invalid TOKEN_ADDRESS. Please set a valid ERC-20 token address in the environment.");
+    }
     const contract = new ethers.Contract(address, erc20PermitAbi, provider) as ERC20PermitContract;
     return contract;
   }
@@ -51,6 +54,9 @@ export class OnchainInteractions {
 
   static async getTokenBalance(address: string) {
     const tokenAddress = this.getTokenAddress();
+    if (!tokenAddress || !ethers.isAddress(tokenAddress) || tokenAddress.toLowerCase() === "0x0000000000000000000000000000000000000000") {
+      throw new Error("TOKEN_ADDRESS is not configured or is invalid (zero address). Set ENV APP.TOKEN_ADDRESS to your ERC-20 contract.");
+    }
     const contract = await this.getERC20Contract(tokenAddress);
     const balance = await contract.balanceOf(address);
     return balance;

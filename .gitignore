@@ -2,5 +2,6 @@ node_modules/
 .env
 # Ignore all logs
 logs/
+logs/*
 combined.log
 AuraPay_Profile_Postman_Collection.json

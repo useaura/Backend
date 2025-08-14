@@ -193,9 +193,10 @@ export class WalletController {
           message: error.message,
         });
       } else {
+        const message = error instanceof Error ? error.message : "Failed to get token balance";
         res.status(INTERNAL_SERVER_ERROR).json({
           success: false,
-          message: "Failed to get token balance",
+          message,
         });
       }
     }
